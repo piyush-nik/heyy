@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heyy Vidhi with Rose Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4e2d8; /* Soft cream background */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            flex-direction: column;
+            background-image: linear-gradient(120deg, #d4fc79, #96e6a1); /* Soft pastel gradient */
+            transition: background-color 1s ease;
+        }
+
+        #heyyVidhi {
+            font-size: 3rem;
+            color: #fa709a; /* Light pink text */
+            text-shadow: 0 0 15px rgba(250, 112, 154, 0.6); /* Soft glow around text */
+            animation: fadeInUp 2s ease-in-out infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        #rose {
+            width: 150px;
+            animation: zoomRose 3s ease-in-out infinite, floatRose 6s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomRose {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2); /* Soft zoom */
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes floatRose {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Gentle float effect */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Add soft pastel sparkle animation to the background when hovered */
+        body:hover {
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            background-color: #ffe6fa; /* Light lavender when hovered */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heyyVidhi">Heyy Vidhi</div>
+    <img id="rose" src="image.png" alt="Rose">
+
+    <script>
+        // Optionally, you can add interactivity using JavaScript
+        const heyyVidhiElement = document.getElementById('heyyVidhi');
+
+        heyyVidhiElement.addEventListener('mouseover', function() {
+            this.textContent = 'Hello, Vidhi!';
+            this.style.color = '#ff9a9e'; /* Soft coral pink when hovered */
+            this.style.textShadow = '0 0 20px rgba(255, 154, 158, 0.9)'; /* Bright glowing effect */
+        });
+
+        heyyVidhiElement.addEventListener('mouseout', function() {
+            this.textContent = 'Heyy Vidhi';
+            this.style.color = '#fa709a'; /* Revert to light pink */
+            this.style.textShadow = '0 0 15px rgba(250, 112, 154, 0.6)';
+        });
+    </script>
+</body>
+</html>
